@@ -5,7 +5,7 @@ function App() {
   const [result, setResult] = useState();
 
   useEffect(() => {
-    const url = "http://api.sr.se/api/v2/podfiles?programid=5067&format=json";
+    const url = "https://api.sr.se/api/v2/podfiles?programid=5067&format=json";
 
     fetch(url)
       .then((res) => res.json())
@@ -21,14 +21,13 @@ function App() {
       {result &&
         result.podfiles.map((podfile, i) => {
           return (
-            (<p key={i}>{podfile.title}</p>),
-            (<p key={i}>{podfile.description}</p>),
-            (<p key={i}>{podfile.url}</p>)
+            <div key={i}>
+              <p>{podfile.title}</p>
+              <p>{podfile.description}</p>
+              <a href={podfile.url}>Ladda ner avsnittet</a>
+            </div>
           );
         })}
-      <a href="http://sverigesradio.se/topsy/ljudfil/srapi/7365817.mp3">
-        Ladda ner avsnittet
-      </a>
     </div>
   );
 }
