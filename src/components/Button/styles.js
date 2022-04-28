@@ -11,5 +11,5 @@ export const ButtonStyled = styled.button`
 `;
 
 export const LinkStyled = styled.a`
-  margin: 16px 0px 0px 0px;
+  margin: 8px 0px 16px 0px;
 `;
