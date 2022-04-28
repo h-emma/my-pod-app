@@ -34,7 +34,9 @@ function App() {
 
   return (
     <div className="App">
-      <H1>Här hittar du de senaste avsnitten av p3 Historia</H1>
+      <div className="Header">
+        <H1>Här hittar du avsnitt av p3 Historia</H1>
+      </div>
       {result &&
         podfiles.map((podfile, i) => {
           return (
