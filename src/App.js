@@ -32,7 +32,6 @@ function App() {
             continue;
           }
           fliterPodfile.push(data.podfiles[i]);
-          console.log(data.podfile);
         }
         setPodfiles(fliterPodfile);
       });
