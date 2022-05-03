@@ -8,7 +8,8 @@ function App() {
   const [podfiles, setPodfiles] = useState();
 
   useEffect(() => {
-    const url = "https://api.sr.se/api/v2/podfiles?programid=5067&format=json";
+    const url =
+      "https://api.sr.se/api/v2/podfiles?programid=5067&format=json&size=20";
 
     fetch(url)
       .then((res) => res.json())
@@ -19,6 +20,10 @@ function App() {
         const fliterPodfile = [];
 
         for (let i = 0; i < data.podfiles.length; i++) {
+          data.podfiles[i].description = data.podfiles[i].description.replace(
+            "&nbsp;",
+            ""
+          );
           if (i === 0) {
             fliterPodfile.push(data.podfiles[0]);
             continue;
@@ -27,6 +32,7 @@ function App() {
             continue;
           }
           fliterPodfile.push(data.podfiles[i]);
+          console.log(data.podfile);
         }
         setPodfiles(fliterPodfile);
       });
